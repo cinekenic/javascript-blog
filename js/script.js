@@ -63,9 +63,13 @@ function generateTitleLinks() {
   for (let article of articles) {
     /* get the article id */
     const articleId = article.getAttribute("id");
+    /* find the title element */
+    const articleTitle = article.querySelector(optTitleSelector);
+    /* get the title from the title element */
+    const linkHTML = `<li><a href="# ${articleId}"><span>${articleId}</span></a></li>`;
+
+    console.log(linkHTML);
   }
-  /* find the title element */
-  /* get the title from the title element */
   /* create HTML of the link */
   /* insert link into titleList */
 }
