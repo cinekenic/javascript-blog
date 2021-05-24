@@ -55,16 +55,22 @@ function generateTitleLinks(customSelector = "") {
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = "";
+  html = "";
   /* for each article */
+  console.log(titleList);
 
-  let articles = document.querySelectorAll(optArticleSelector + customSelector);
-
+  const articles = document.querySelectorAll(
+    optArticleSelector + customSelector
+  );
+  console.log(optArticleSelector, customSelector);
+  console.log(articles);
   for (let article of articles) {
     /* get the article id */
     const articleId = article.getAttribute("id");
     /* find the title element */
-
+    console.log(articleId);
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+    console.log(articleTitle);
 
     /* get the title from the title element */
     /* create HTML of the link */
@@ -72,6 +78,7 @@ function generateTitleLinks(customSelector = "") {
     /* insert link into titleList */
     html = html + linkHTML;
   }
+  console.log(titleList);
 
   titleList.innerHTML = html;
 
@@ -136,7 +143,7 @@ function tagClickHandler(event) {
   const tag = href.replace("#tag-", "");
 
   /* find all tag links with class active */
-  const activeLinks = document.querySelectorAll('a.active[href^="#tag-"]');
+  const activeLinks = document.querySelectorAll("a.active");
 
   /* START LOOP: for each active tag link */
   for (let link of activeLinks) {
@@ -147,7 +154,7 @@ function tagClickHandler(event) {
   }
 
   /* find all tag links with "href" attribute equal to the "href" constant */
-  const articleAttribute = clickedElement.getAttribute("href");
+  const articleAttribute = clickedElement.getAttribute(href);
 
   /* START LOOP: for each found tag link */
   /* add class active */
@@ -163,6 +170,7 @@ function addClickListenersToTags() {
   /* find all links to tags */
 
   const tagLinks = document.querySelectorAll(`a`);
+  console.log(tagLinks);
 
   /* START LOOP: for each link */
   for (let link of tagLinks) {
