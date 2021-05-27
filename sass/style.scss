@@ -86,6 +86,9 @@ body {
   .active {
     font-weight: bold;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .list-horizontal {
@@ -124,7 +127,7 @@ body {
 
 .tag-size-1 {
   display: inline;
-  font-size: 20px;
+  font-size: 15px;
   color: #444;
 }
 .tag-size-2 {
@@ -138,11 +141,6 @@ body {
   color: #644;
 }
 
-.tag-size-3 {
-  display: inline;
-  font-size: 30px;
-  color: #744;
-}
 .tag-size-4 {
   display: inline;
   font-size: 35px;
@@ -153,4 +151,15 @@ body {
   display: inline;
   font-size: 40px;
   color: #944;
+}
+
+.list-horizontal a {
+  font-size: 1.1rem;
+  margin-right: 15px;
+}
+
+.titles a,
+.list-horizontal a,
+.authors a {
+  color: orangered;
 }
