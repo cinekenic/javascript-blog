@@ -47,7 +47,6 @@ const optArticleSelector = ".post",
   optTitleSelector = ".post-title",
   optTitleListSelector = ".titles",
   optArticleTagsSelector = ".post-tags .list",
-  optTagsListSelector = ".tags.list",
   optCloudClassCount = "5",
   optCloudClassPrefix = "tag-size-";
 
@@ -299,8 +298,6 @@ function authorClickHandler(event) {
   for (let link of activeLinks) {
     link.classList.remove("active");
   }
-
-  const articleAttribute = clickedElement.getAttribute("href");
 
   clickedElement.classList.add("active");
 
